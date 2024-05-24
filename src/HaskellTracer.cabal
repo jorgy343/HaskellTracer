@@ -1,0 +1,33 @@
+cabal-version:          3.4
+name:                   HaskellTracer
+version:                0.1.0.0
+-- synopsis:
+-- description:
+-- license:
+-- license-file:
+author:                 Jorgy
+maintainer:             jorgy343@gmail.com
+-- copyright:
+category:               Graphics
+build-type:             Simple
+-- extra-doc-files:
+-- extra-source-files:
+
+common warnings
+    ghc-options:        -Wall -ddump-asm -ddump-to-file
+
+executable HaskellTracer
+    import:             warnings
+    main-is:            Main.hs
+    other-modules:
+        Color3,
+        Ray,
+        Shape,
+        Vector3,
+    build-depends:
+        bytestring ^>=0.12.1.0,
+        base ^>=4.19.1.0,
+        bmp ^>=1.2.6.3,
+        word8 ^>=0.1.3,
+    hs-source-dirs:     app
+    default-language:   GHC2021
