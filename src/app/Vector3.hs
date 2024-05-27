@@ -15,6 +15,7 @@ class Vector vector where
   (.*) :: (Floating a) => vector a -> a -> vector a
   (*.) :: (Floating a) => a -> vector a -> vector a
   (./) :: (Floating a) => vector a -> a -> vector a
+  negate :: (Floating a) => vector a -> vector a
   normalize :: (Floating a) => vector a -> vector a
   dot :: (Floating a) => vector a -> vector a -> a
 
@@ -34,6 +35,7 @@ instance Vector Vector3 where
   (.*) (Vector3 x y z) s = Vector3 (x * s) (y * s) (z * s)
   (*.) s (Vector3 x y z) = Vector3 (s * x) (s * y) (s * z)
   (./) (Vector3 x y z) s = Vector3 (x / s) (y / s) (z / s)
+  negate (Vector3 x y z) = Vector3 (-x) (-y) (-z)
   normalize (Vector3 x y z) = Vector3 (x / l) (y / l) (z / l)
     where
       l = sqrt (x * x + y * y + z * z)
