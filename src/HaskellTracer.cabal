@@ -21,6 +21,7 @@ executable HaskellTracer
     main-is:            Main.hs
     other-modules:
         Color3,
+        Lights,
         Ray,
         Shape,
         Vector3,
